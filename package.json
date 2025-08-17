@@ -1,0 +1,23 @@
+{
+  "name": "word-of-the-day-mcp",
+  "version": "1.0.0",
+  "description": "Simple MCP server for random word of the day",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "latest",
+    "play-sound": "^1.1.6",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/play-sound": "^1.1.2",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  },
+  "type": "module"
+}

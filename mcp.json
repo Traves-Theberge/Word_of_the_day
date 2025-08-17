@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "word-of-the-day": {
+      "command": "node",
+      "args": ["dist/index.js"],
+      "cwd": "C:\\Users\\trave\\Desktop\\Programs\\Word_of_the_day"
+    }
+  }
+}
