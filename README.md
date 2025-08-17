@@ -44,16 +44,33 @@ The server is configured to run via the MCP protocol. Add it to your MCP client 
 }
 ```
 
-### Available Tools
+## 🛠️ Available MCP Tools
 
-#### 1. `get_word_definition`
-Get the definition, pronunciation, and meanings of a word.
+This server provides two powerful tools for vocabulary enhancement:
 
-**Parameters:**
-- `word` (required): The word to get the definition for
-- `language` (optional): Language code (default: "en")
+### 📖 `get_word_definition`
+**Description:** Get comprehensive definitions, pronunciations, and meanings of any English word using the Dictionary API.
 
-**Example:**
+**Input Schema:**
+```json
+{
+  "type": "object",
+  "properties": {
+    "word": {
+      "type": "string",
+      "description": "The word to get the definition for"
+    },
+    "language": {
+      "type": "string", 
+      "description": "Language code (default: en)",
+      "default": "en"
+    }
+  },
+  "required": ["word"]
+}
+```
+
+**Example Usage:**
 ```json
 {
   "name": "get_word_definition",
@@ -63,13 +80,45 @@ Get the definition, pronunciation, and meanings of a word.
 }
 ```
 
-#### 2. `get_random_word`
-Get a random word with its definition for word of the day.
+**Sample Response:**
+```
+**serendipity**
 
-**Parameters:**
-- `difficulty` (optional): Difficulty level - "easy", "medium", or "hard" (default: "medium")
+**Pronunciation:** /ˌsɛɹənˈdɪpɪti/
 
-**Example:**
+**Meanings:**
+
+1. **noun**
+   1. An unsought finding or discovery; a pleasant surprise.
+      *Example: "A fortunate stroke of serendipity brought the two old friends together."*
+   2. The faculty or phenomenon of finding valuable or agreeable things not sought for.
+
+**Audio Pronunciation:**
+1. https://api.dictionaryapi.dev/media/pronunciations/en/serendipity-us.mp3
+```
+
+---
+
+### 🎲 `get_random_word`
+**Description:** Get a random word with its complete definition for daily vocabulary building, categorized by difficulty level.
+
+**Input Schema:**
+```json
+{
+  "type": "object",
+  "properties": {
+    "difficulty": {
+      "type": "string",
+      "enum": ["easy", "medium", "hard"],
+      "description": "Difficulty level of the random word",
+      "default": "medium"
+    }
+  },
+  "required": []
+}
+```
+
+**Example Usage:**
 ```json
 {
   "name": "get_random_word",
@@ -78,6 +127,26 @@ Get a random word with its definition for word of the day.
   }
 }
 ```
+
+**Sample Response:**
+```
+**surreptitious** 🕵️
+
+**Pronunciation:** /ˌsʌɹɪpˈtɪʃəs/
+
+**Meanings:**
+
+1. **adjective**
+   1. Stealthy, furtive, well hidden, covert (especially movements).
+
+**Audio Pronunciation:**
+1. https://api.dictionaryapi.dev/media/pronunciations/en/surreptitious-us.mp3
+```
+
+**Difficulty Levels:**
+- **Easy**: Common everyday words (happy, house, water, light, music, friend)
+- **Medium**: Sophisticated vocabulary (serendipity, eloquent, resilient, magnificent)  
+- **Hard**: Advanced vocabulary (ephemeral, ubiquitous, perspicacious, surreptitious)
 
 ## 📚 API Integration
 
