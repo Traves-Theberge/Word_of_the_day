@@ -4,7 +4,7 @@ A Model Context Protocol (MCP) server that provides word definitions and random 
 
 ## 🙏 Special Thanks
 
-Huge shoutout to the **[Free Dictionary API](https://api.dictionaryapi.dev/)** team for providing this incredible, free, and open-source dictionary service! This project wouldn't be possible without their fantastic API that delivers comprehensive word definitions, pronunciations, examples, and more. 
+Huge shoutout to the **[Free Dictionary API](https://www.dictionaryapi.dev/)** team for providing this incredible, free, and open-source dictionary service! This project wouldn't be possible without their fantastic API that delivers comprehensive word definitions, pronunciations, examples, and more. 
 
 **API Endpoint:** `https://api.dictionaryapi.dev/api/v2/entries/en/<word>`
 
